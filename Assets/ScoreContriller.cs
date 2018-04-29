@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ScoreContriller : MonoBehaviour{
-    int Score = 0;
+    public int Score = 0;
     // Use this for initialization
     void Start()
     {
@@ -32,6 +32,8 @@ public class ScoreContriller : MonoBehaviour{
         {
             Score += 100;
         }
+        GameObject scorePrint = GameObject.Find("ScoreText");
+        scorePrint.GetComponent<ScorePrint>().UpdateScore();
 
     }
 }

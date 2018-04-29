@@ -12,7 +12,14 @@ public class ScorePrint : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        this.scoreText = GameObject.Find("Ball");
-        this.scoreText.GetComponent<Text>().text = "Score:" + (Score);		
+        		
 	}
+    public void UpdateScore(){
+        GameObject ball = GameObject.Find("Ball");
+        int score = ball.GetComponent<ScoreContriller>().Score;
+        ball.GetComponent<Rigidbody>().useGravity = false;
+        this.GetComponent<Rigidbody>().useGravity = false;
+        Debug.Log(score);
+        this.GetComponent<Text>().text = "Score:" + (score);
+    }
 }
