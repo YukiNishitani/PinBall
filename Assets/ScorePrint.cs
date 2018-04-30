@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ScorePrint : MonoBehaviour {
-    private GameObject scoreText;
+    private GameObject ScoreText;
 
 	void Start(){
-        this.scoreText = GameObject.Find("ScoreText");
+        this.ScoreText = GameObject.Find("ScoreText");
 	}
 
 	// Update is called once per frame
@@ -17,8 +17,6 @@ public class ScorePrint : MonoBehaviour {
     public void UpdateScore(){
         GameObject ball = GameObject.Find("Ball");
         int score = ball.GetComponent<ScoreContriller>().Score;
-        ball.GetComponent<Rigidbody>().useGravity = false;
-        this.GetComponent<Rigidbody>().useGravity = false;
         Debug.Log(score);
         this.GetComponent<Text>().text = "Score:" + (score);
     }
